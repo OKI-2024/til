@@ -68,4 +68,24 @@ end
 
 puts fib[100]
 
-# 問4 
+# 問5
+fib = [1,1]
+
+n = 0
+while n < 100
+ fib << fib[n] + fib[n+1]
+ n = n + 1
+end
+
+sum = 0
+
+fib.each do |i|
+  if i % 2 == 0
+   sum += i
+  end
+end
+
+puts sum
+
+
+# 問6
