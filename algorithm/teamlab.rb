@@ -19,3 +19,18 @@ divisors.each do |n|
 end
 
 puts count
+
+# 2
+
+array = (1..600)
+n = 77777
+sum = 0
+array.each do |i|
+  quotient = n / i
+  remainder = n % i
+  sum += (quotient + remainder)
+end
+
+puts sum
+
+# 3
