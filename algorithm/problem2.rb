@@ -23,8 +23,24 @@ while n <= 10 do
  n += 1
 end
 
-# 問1
+# 問2
 
+array = (1..1000)
+nums = 0
+array.each do |i|
+  nums += i
+end
+puts nums
+
+# もしくは
+
+n = 1
+sum = 0
+while n <= 1000 do
+  sum += n
+  n += 1
+end
+puts sum
 
 
 
