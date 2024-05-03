@@ -89,3 +89,21 @@ puts sum
 
 
 # 問6
+
+n = 122
+
+40.times do
+  n = (n * 1.1).floor
+end
+
+puts n
+
+# もしくは
+n = 122
+count = 1
+while count <= 40
+  n = (n * 1.1).floor
+  count += 1
+end
+
+puts n
