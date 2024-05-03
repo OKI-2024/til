@@ -52,3 +52,44 @@ thousands += i.to_s[-4].to_i
 end
 
 puts thousands
+
+# 4
+
+require 'bigdecimal/math'
+
+sum = 0
+n = 1
+
+# ここにループを追加し、1からNまでの整数の平方根の整数部分の和を計算する
+
+while sum <= 1000000 do
+  # 平方根の整数部分を求める
+  square_root = Math.sqrt(n).to_i
+  # 和に加算する
+  sum += square_root
+  # Nを増やす
+  n += 1
+end
+
+puts n - 1  
+
+# 5
+# 正解か分からない
+
+count = 0
+
+(1..1000000).each do |num|
+  current_num = num
+  6.times do
+    digits = current_num.digits
+    product = digits.reduce(:*)
+    break if product == 0
+    current_num = product
+  end
+  count += 1 if current_num == 0
+end
+
+puts "答えが0になるまでの繰り返しの掛算が丁度6回になる数値の数: #{count}"
+
+
+    
