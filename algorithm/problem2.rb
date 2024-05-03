@@ -61,18 +61,18 @@ p fib
 fib = [1,1]
 
 n = 0
-while n < 100
+while n < 98
  fib << fib[n] + fib[n+1]
  n = n + 1
 end
 
-puts fib[100]
+puts fib.last
 
 # 問5
 fib = [1,1]
 
 n = 0
-while n < 100
+while n < 98
  fib << fib[n] + fib[n+1]
  n = n + 1
 end
