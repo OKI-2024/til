@@ -34,3 +34,21 @@ end
 puts sum
 
 # 3
+
+array = []
+
+(1359..99999999).each do |n|
+  if n % 1359 == 0
+    array << n
+  end
+end
+
+thousands = 0
+
+array.each do |i|
+
+thousands += i.to_s[-4].to_i
+
+end
+
+puts thousands
