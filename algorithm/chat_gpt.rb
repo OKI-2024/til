@@ -13,6 +13,8 @@ end
 
 # ユーザーに入力された数が素数かどうかを判定するプログラムを書いてください。
 # 素数...1とその数自身以外の約数を持たない数
+
+puts "素数かどうか確認したい数字を入力してください"
 n = gets.to_i
 
 count = 1
@@ -44,10 +46,29 @@ end
 
 puts gcd(48, 18)
 
+
+puts "1つめの数字を入力してください"
 num1 = gets.to_i
+puts "2つめの数字を入力してください"
 num2 = gets.to_i
 
 puts gcd(num1, num2)
 
 
 # ユーザーに入力された数の階乗を計算するプログラムを書いてください。
+
+def factorial(num)
+  result = 1
+  current_num = num
+
+  while current_num > 1 do
+    result *= current_num
+    current_num -= 1
+  end
+
+  return result
+end
+
+puts "階乗を計算したい数字を入力してください"
+num = gets.to_i
+puts factorial(num) 
