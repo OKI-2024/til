@@ -42,6 +42,19 @@ while n <= 1000 do
 end
 puts sum
 
+# 問3
 
+fib = [1,1]
+
+n = 0
+while n < 100
+ fib << fib[n] + fib[n+1]
+ n = n + 1
+end
+
+p fib
+
+# 回答…元々配列fib = [1]には一つの値しか入っていなかった為、fib << fib[n] + fib[n+1]の内、fib[n+1]が存在しない値(nil)となりエラーが発生。
+# 解決策としては、配列fib = [1,1]に変更し、初期値として2つの数値を入れる。
 
 
