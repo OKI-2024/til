@@ -47,3 +47,6 @@ sum = 0
 end
 
 puts sum
+
+# https://paiza.jp/challenges/488/show
+
