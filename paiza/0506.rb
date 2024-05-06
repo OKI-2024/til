@@ -50,3 +50,16 @@ puts sum
 
 # https://paiza.jp/challenges/488/show
 
+n, d = gets.split.map(&:to_i)
+
+yoko = n * d
+
+(n -1).times do
+  kasanari = gets.to_i
+   yoko -= kasanari
+end
+
+puts yoko * d
+
+
+# https://paiza.jp/challenges/571/show
