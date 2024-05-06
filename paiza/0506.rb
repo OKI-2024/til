@@ -22,9 +22,7 @@ end
 
 puts count
 
-
 # https://paiza.jp/challenges/560/show
-
 
 
 n, m = gets.split.map(&:to_i)
@@ -32,7 +30,6 @@ n, m = gets.split.map(&:to_i)
 # ①"10 20"と入力
 # ②splitによって空白を区切りとして、["10", "20"]という配列に
 # ③配列の各要素に対して&:to_iを実行し、数値に変換→[10, 20]
-
 
 
 sum = 0
@@ -62,4 +59,25 @@ end
 puts yoko * d
 
 
+
 # https://paiza.jp/challenges/571/show
+
+
+shops, month = gets.split.map(&:to_i)
+
+construction, personal, profit = gets.split.map(&:to_i)
+
+count = 0
+cost = construction + (personal * month)
+
+shops.times do
+  
+  n = gets.to_i * profit
+  if (n - cost ) < 0
+    count += 1
+  end
+end
+
+puts count
+
+
