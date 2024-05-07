@@ -81,3 +81,28 @@ end
 puts count
 
 
+# 昇順リスト
+
+puts "整数のリストを入力してください（スペースで区切ってください）"
+
+n = gets.split.map(&:to_i)
+
+puts n.sort
+
+
+
+
+# 平均値
+
+puts "整数のリストを入力してください（スペースで区切ってください）"
+numbers = gets.split.map(&:to_i)
+
+sum = 0
+
+numbers.each do |num|
+    sum += num
+end
+
+average = sum.to_f / numbers.length  # 平均値を計算する際に、割り算の結果が整数にならないようにto_fメソッドを使用します
+
+puts "リストの平均値は #{average} です。"
