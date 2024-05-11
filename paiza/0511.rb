@@ -1,3 +1,48 @@
+
+# https://paiza.jp/challenges/432/show
+
+puts "マスの高さと幅の数値を入力してください"
+H, W = gets.split.map(&:to_i)
+
+board = []
+
+puts "各マスの状態を'o'（打ち抜いた）または'x'（打ち抜かなかった）で入力してください"
+
+H.times do |i|
+  puts "#{i + 1}行目のoxを入力してください"
+  row = gets.chomp.split('')
+  board << row
+end
+
+
+scores = []
+
+puts "各マスの得点を入力してください"
+
+H.times do |i|
+  puts "#{i + 1}行目の得点を入力してください"
+  scores << gets.split.map(&:to_i)
+end
+
+total_score = 0
+
+board.each_with_index do |row, i|
+  row.each_with_index do |cell, j|
+    if cell == 'o'
+      total_score += scores[i][j] # boardのi行目、j列目のセルに対応する得点を追加
+    end
+  end
+end
+
+puts "合計得点: #{total_score}"
+
+
+  
+
+
+
+
+
 # https://paiza.jp/works/challenges/76/retry
 
 puts "中心の座標、それぞれの半径を入力してください"
