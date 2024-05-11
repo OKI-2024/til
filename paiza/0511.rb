@@ -11,7 +11,7 @@ puts "各マスの状態を'o'（打ち抜いた）または'x'（打ち抜か�
 H.times do |i|
   puts "#{i + 1}行目のoxを入力してください"
   row = gets.chomp.split('')
-  board << row
+  board << row #これにより、boardは二次元配列になる→（例）[ [o, x, x], [o, o, o], [x, o, x] ]
 end
 
 
@@ -26,10 +26,10 @@ end
 
 total_score = 0
 
-board.each_with_index do |row, i|
-  row.each_with_index do |cell, j|
+board.each_with_index do |row, i| #.each_with_indexは値とindex（順番）を取得することができる 
+  row.each_with_index do |cell, j| # ↑で各行を取り出し、行の中のセルをeachでoxを判定する
     if cell == 'o'
-      total_score += scores[i][j] # boardのi行目、j列目のセルに対応する得点を追加
+      total_score += scores[i][j] # boardのi行目、j列目のセルに対応する得点を追加する（二次元配列の為、2つの数値を[]で指定する）
     end
   end
 end
