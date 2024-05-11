@@ -37,10 +37,6 @@ end
 puts "合計得点: #{total_score}"
 
 
-  
-
-
-
 
 
 # https://paiza.jp/works/challenges/76/retry
