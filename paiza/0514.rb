@@ -15,12 +15,12 @@ m_names = []
 N.times do |i| 
   
   puts "#{i + 1}番目のモンスター名と6つの数値を入力してください"
-  input = gets.chomp.split
-  m_name = input[0]
-  min_atk, max_atk, min_def, max_def, min_agi, max_agi = input[1..6].map(&:to_i)
+  input = gets.chomp.split #名前と数字を半角でペース区切りで同時に入力してもらう
+  m_name = input[0] # 一番最初に入力した名前[0]をm_nameとして定義する
+  min_atk, max_atk, min_def, max_def, min_agi, max_agi = input[1..6].map(&:to_i) #名前以降の値をそれぞれto_iして数値に変換する
 
   if ATK >= min_atk && ATK <= max_atk && DEF >= min_def && DEF <= max_def && AGI >= min_agi && AGI <= max_agi
-    m_names << m_name
+    m_names << m_name # 該当した場合はスコープ外のm_namesに投入する
   end
 
 end
