@@ -1,16 +1,38 @@
 # https://paiza.jp/challenges/621/show
 puts "路線数と駅数を入力して"
-routes, tarminals = gets.split.map(&:to_i)
+routes, terminals = gets.split.map(&:to_i)
 
 fares = []
 
 routes.times do |r|
   puts "#{r + 1}路線目の運賃を入力して"
   fare = gets.split.map(&:to_i)
+  fares << fare
 end
 
 puts "経由する駅の数を入力して"
-nums_route_to_tarminal = gets.to_i
+route_to_terminal = gets.to_i
+route_and_terminal = []
+
+route_to_terminal.times do |num|
+  puts "#{num + 1}回目の入力：路線と駅のナンバーを入力して"
+  n = gets.split.map(&:to_i)
+  route_and_terminal << n
+end
+
+sum = 0
+current_terminal = 0 #現在地は配列の0番目
+route_and_terminal.each do |x|
+  route_index = x[0] - 1 #路線番号を取得※-1しているのは、後で使うときにfaresの添え字に合わせて
+  terminal_index = x[1] - 1 #駅番号を取得※-1しているのは、後で使うときにfaresの添え字に合わせて
+  fare =( fares[route_index][current_terminal] - fares[route_index][terminal_index] ).abs #ひとつめ：現在地（例）1路線目の1駅目, ふたつめ：目的地（例）1路線目の4駅目
+  sum += fare
+  current_terminal = terminal_index # 現在地（何駅目か）を更新
+end
+
+puts sum
+
+
 
 
 
