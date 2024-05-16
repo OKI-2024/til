@@ -1,9 +1,9 @@
 # 1
 
 num = 1041440400
-divisors = []
+divisors = [] # 約数の空配列を用意
 
-(1..Math.sqrt(num)).each do |i|
+(1..Math.sqrt(num)).each do |i| # Math.sqrt(num)は平方根を返すもの
   if num % i == 0
     divisors << i
     divisors << num / i unless i == num / i
@@ -38,7 +38,7 @@ puts sum
 array = []
 
 (1359..99999999).each do |n|
-  if n % 1359 == 0
+  if n % 1359 == 0 # 1359の約数かどうか✔
     array << n
   end
 end
@@ -47,7 +47,7 @@ thousands = 0
 
 array.each do |i|
 
-thousands += i.to_s[-4].to_i
+thousands += i.to_s[-4].to_i # 千の位を抜き出し、足し算
 
 end
 
