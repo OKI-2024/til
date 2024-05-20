@@ -20,8 +20,8 @@ field.each_with_index do |row, i|
   row.each_with_index do |cell, j|
     if cell == "#"
       
-      (0...record).each { |x| explosion_map[i][x] = true } # 行全体
-      (0...line).each { |y| explosion_map[y][j] = true }   # 列全体
+      (0...record).each { |x| explosion_map[i][x] = true } # 列全体
+      (0...line).each { |y| explosion_map[y][j] = true }   # 行全体
     end
   end
 end
