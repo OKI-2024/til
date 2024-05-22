@@ -21,13 +21,21 @@ table.each_with_index do |row, row_index|
 
     # 右方向
     if col_index + digits - 1 < column
-      right = (0...digits).map { |k| table[row_index][col_index + k] }.join.to_i
+      right = (0...digits).map { |k| table[row_index][col_index + k] }.join.to_i #joinで配列を連結し、to_iで数値変換
       max_sum = [max_sum, right].max
     end
 
+#mapメソッドの使い方↓↓
+#array = [1, 2, 3, 4]
+#result = array.map { |element| element * 2 }
+#p result
+# => [2, 4, 6, 8]
+
+
+
     # 左方向
     if col_index - digits + 1 >= 0
-      left = (0...digits).map { |k| table[row_index][col_index - k] }.reverse.join.to_i
+      left = (0...digits).map { |k| table[row_index][col_index - k] }.reverse.join.to_i #reverseは配列の順序の入れ替え
       max_sum = [max_sum, left].max
     end
 
