@@ -19,7 +19,7 @@ oreders.times do |i|
   puts "#{i + 1}つめの命令を数字3つで入力してください※●番目から●番目までの参加者に●個の豆を配る"
   orders_detail << gets.split.map(&:to_i)
 end
-beans_received = Array.new(members, 0) #members個（例えば5個）の配列を用意し、初期値を0としている
+beans_received = Array.new(members, 0) #members個（例えば5個）の配列を用意し、初期値を0としている→第一引数が要素数で、第二引数が初期値
 
 orders_detail.each do |order|
   first = order[0] - 1  
